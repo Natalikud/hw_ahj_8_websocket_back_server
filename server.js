@@ -16,11 +16,11 @@ const wsServer = new WS.Server({
 // Временный кортеж онлайн клиентов
 let tempUsersSet = new Set(['user1(default)']);
 
-// Обновление кортежа онлайн клиентов (9с.)
+// Обновление кортежа онлайн клиентов (1с.)
 setInterval(() => {
   messages.users = tempUsersSet;
   tempUsersSet = new Set(['user1(default)']);
-}, 9000);
+}, 1000);
 
 wsServer.on('connection', (ws) => {
   ws.on('message', (message) => {
